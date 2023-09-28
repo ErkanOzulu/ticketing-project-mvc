@@ -9,7 +9,7 @@ import java.util.List;
 public class UserServiceImpl extends AbstractMapService<UserDTO, String> implements UserService {
     @Override
     public UserDTO save(UserDTO object) {
-        return save(object.getUserName(), object);
+        return super.save(object.getUserName(), object);
     }
 
     @Override
@@ -19,11 +19,11 @@ public class UserServiceImpl extends AbstractMapService<UserDTO, String> impleme
 
     @Override
     public void deleteById(String id) {
-        deleteById(id);
+        super.deleteById(id);
     }
 
     @Override
     public UserDTO findById(String id) {
-        return findById(id);
+        return super.findById(id);
     }
 }
