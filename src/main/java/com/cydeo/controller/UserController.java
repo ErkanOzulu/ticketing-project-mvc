@@ -1,5 +1,6 @@
 package com.cydeo.controller;
 
+import com.cydeo.dto.RoleDTO;
 import com.cydeo.dto.UserDTO;
 import com.cydeo.service.RoleService;
 import com.cydeo.service.UserService;
@@ -62,6 +63,14 @@ public class UserController {
     public String updateUser(UserDTO user){
 
         userService.update(user);
+        return "redirect:/user/create";
+    }
+
+    @GetMapping("/delete/{username}")
+    public String deleteUser(@PathVariable("username")String username){
+
+        userService.deleteById(username);
+
         return "redirect:/user/create";
     }
 
