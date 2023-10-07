@@ -19,14 +19,16 @@ public class TaskDTO {
     private LocalDate  assignedDate;
     private Status taskStatus;
 
-    public TaskDTO(ProjectDTO project, UserDTO assignedEmployee, String taskSubject, String taskDetail, LocalDate assignedDate, Status taskStatus) {
+    public TaskDTO(ProjectDTO project, UserDTO assignedEmployee, String taskSubject, String taskDetail,  Status taskStatus, LocalDate assignedDate) {
         this.project = project;
         this.assignedEmployee = assignedEmployee;
         this.taskSubject = taskSubject;
         this.taskDetail = taskDetail;
-        this.assignedDate = assignedDate;
         this.taskStatus = taskStatus;
-        this.id = UUID.randomUUID().getMostSignificantBits();
+        this.assignedDate = assignedDate;
+             this.id = UUID.randomUUID().getMostSignificantBits();
 
     }
+
+
 }
