@@ -6,7 +6,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
-@AllArgsConstructor
+import java.util.UUID;
+
 @NoArgsConstructor
 @Data
 public class TaskDTO {
@@ -18,5 +19,14 @@ public class TaskDTO {
     private LocalDate assignedTask;
     private Status taskStatus;
 
+    public TaskDTO(ProjectDTO project, UserDTO user, String taskSubject, String taskDetail, LocalDate assignedTask, Status taskStatus) {
+        this.project = project;
+        this.user = user;
+        this.taskSubject = taskSubject;
+        this.taskDetail = taskDetail;
+        this.assignedTask = assignedTask;
+        this.taskStatus = taskStatus;
+        this.id= UUID.randomUUID().getMostSignificantBits();
 
+    }
 }
